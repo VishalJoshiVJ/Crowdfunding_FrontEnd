@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fund</title>
+       <style>
+            @import url(FormCSS1.css)
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+       
+    
+        <body ng-app="" style="margin: 10%;  margin-top: 5%;">
+            <form name="form1">
+                <p id="heading">FUNDS FOR FAMILIES OF MARTYRED SOLDIERS OF INDIA</p>
+                <div class="container">
+                    <a href="javascript:;" onclick="window.print();">
+                    <i class="fas fa-print" style="color: black; float: right;"></i>
+                    </a>
+                    
+                </div>
+                <br>
+                <br>
+            <label for="fname">First Name   </label><br>
+                <div class="form-group">
+            <input type="text" id="fname" class="form-control" name="fname" placeholder="Your First Name"  required>
+            <br>
+            <br>
+                
+             <label for="lname">Last Name   </label><br>
+            <input type="text" id="lname" class="form-control" name="lname" placeholder="Your Last Name" required>
+            <br>
+                <br>
+                
+            <label for="gender">Gender      </label>
+                <br>
+            <br>
+                
+            <input type="radio" id="male" name="gender">
+                <label for="gender">Male </label>
+                <br>
+                
+                
+            <input type="radio" id="female" name="gender" >
+                <label for="gender">Female </label>
+                <br>
+               
+            <input type="radio" id="other" name="gender" >
+                 <label for="gender">Other  </label>
+                <br>
+                <br>
+                
+                
+             <label for="address">Address   </label><br>
+            <input type="text" id="address" class="form-control" name="address"  placeholder="Your Adderss"  required>
+            <br>
+                <br>
+                
+             <label for="phone">Phone No.   </label><br>
+            <input type="text" id="phone" class="form-control" name="phone"  placeholder="Mobile Number" required>
+            <br>
+                <br>
+                <label for="email" >Email Id   </label><br>
+            <input type="email" id="email" class="form-control" name="email" ng-model="email" placeholder="Email Id">
+            <p ng-show = "form1.email.$invalid">Invalid Email</p>
+            <br>
+                <br>
+                <label for="user" >Country </label><br>
+                    
+            <select class="projects" name="user" class="form-control"  required>
+            <option value="select">Select</option>
+            <option value="india">India</option>
+            <option value="USA">USA</option>
+            <option value="russia">Russia</option>
+            <option value="srilanka">Srilanka</option>
+            <option value="australia">Australia</option>
+            <option value="UK">UK</option>
+                </select>
+                <br>
+                <br>
+                
+             <label for="fund">Fund Amount  </label><br>
+            <input type="number" id="fund" class="form-control" name="fund" min="500" placeholder="Funding Amount" required>
+            <br>
+                <br>
+                
+                    <button type="submit" id="submit" class="btn btn-primary" name="submit"  onclick="validateForm()">Submit</button>
+            <br>
+                <br>
+            </div>
+            </form>
+            <p>Thank You for Visiting...</p>
+            <a href="CrowdFunding1.html"  style="color: black">Go To Homepage</a>
+            
+            <script>
+                
+                function validateForm(){
+                    var x = document.forms["form1"]["fname"].value;
+                    if(x==""){
+                        alert("First Name must be specified");
+                        return false;
+                    }
+                    
+                    var x = document.forms["form1"]["lname"].value;
+                    if(x==""){
+                        alert("Last Name must be specified");
+                        return false;
+                    }
+                    
+                    var x = document.forms["form1"]["address"].value;
+                    if(x==""){
+                        alert("Address must be specified");
+                        return false;
+                    }
+                    
+                    var x = document.forms["form1"]["phone"].value;
+                    if(x==""){
+                        alert("Phone number must be specified");
+                        return false;
+                    }
+                    
+                    var x = document.forms["form1"]["phone"].value;
+                    if(x.length != 10){
+                        alert("Phone number should be 10 digits");
+                        return false;
+                    }
+                    
+                    var x = document.forms["form1"]["fund"].value;
+                    if(x<500){
+                        alert("Fund must be greater than INR 500");
+                        return false;
+                    }
+                    
+                    alert("Funded Successfully, Thank You for Helping...");
+                }
+            </script>
+    </body>
+    
+</html>
